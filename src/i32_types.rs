@@ -3,7 +3,7 @@ use super::*;
 //
 
 /// 2 rows, 2 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat2x2 {
@@ -13,7 +13,7 @@ pub struct IMat2x2 {
 pub type IMat2 = IMat2x2;
 
 /// 2 rows, 3 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat2x3 {
@@ -23,7 +23,7 @@ pub struct IMat2x3 {
 }
 
 /// 2 rows, 4 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat2x4 {
@@ -34,7 +34,7 @@ pub struct IMat2x4 {
 }
 
 /// 3 rows, 2 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat3x2 {
@@ -43,7 +43,7 @@ pub struct IMat3x2 {
 }
 
 /// 3 rows, 3 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat3x3 {
@@ -54,7 +54,7 @@ pub struct IMat3x3 {
 pub type IMat3 = IMat3x3;
 
 /// 3 rows, 4 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat3x4 {
@@ -65,7 +65,7 @@ pub struct IMat3x4 {
 }
 
 /// 4 rows, 2 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat4x2 {
@@ -74,7 +74,7 @@ pub struct IMat4x2 {
 }
 
 /// 4 rows, 3 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat4x3 {
@@ -84,7 +84,7 @@ pub struct IMat4x3 {
 }
 
 /// 4 rows, 4 cols
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IMat4x4 {
@@ -98,7 +98,7 @@ pub type IMat4 = IMat4x4;
 //
 
 /// 2 elements
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IVec2 {
@@ -107,7 +107,7 @@ pub struct IVec2 {
 }
 
 /// 3 elements
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IVec3 {
@@ -117,7 +117,7 @@ pub struct IVec3 {
 }
 
 /// 4 elements
-#[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
 pub struct IVec4 {
