@@ -23,3 +23,6 @@ pub use negation::*;
 
 pub mod scaling;
 pub use scaling::*;
+
+pub mod determinant;
+pub use determinant::*;

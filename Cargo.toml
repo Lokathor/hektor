@@ -10,3 +10,6 @@ publish = false
 
 [dependencies]
 bytemuck = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+nalgebra = "0.24"
