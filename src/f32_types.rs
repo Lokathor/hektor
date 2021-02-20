@@ -1,5 +1,11 @@
 use super::*;
 
+pub type Mat2 = Mat2x2;
+
+pub type Mat3 = Mat3x3;
+
+pub type Mat4 = Mat4x4;
+
 //
 
 /// 2 rows, 2 cols
@@ -10,7 +16,6 @@ pub struct Mat2x2 {
   pub r0c0: f32, pub r1c0: f32,
   pub r0c1: f32, pub r1c1: f32,
 }
-pub type Mat2 = Mat2x2;
 
 /// 2 rows, 3 cols
 #[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
@@ -51,7 +56,6 @@ pub struct Mat3x3 {
   pub r0c1: f32, pub r1c1: f32, pub r2c1: f32,
   pub r0c2: f32, pub r1c2: f32, pub r2c2: f32,
 }
-pub type Mat3 = Mat3x3;
 
 /// 3 rows, 4 cols
 #[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
@@ -93,7 +97,6 @@ pub struct Mat4x4 {
   pub r0c2: f32, pub r1c2: f32, pub r2c2: f32, pub r3c2: f32,
   pub r0c3: f32, pub r1c3: f32, pub r2c3: f32, pub r3c3: f32,
 }
-pub type Mat4 = Mat4x4;
 
 //
 

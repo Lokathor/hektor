@@ -1,5 +1,11 @@
 use super::*;
 
+pub type DMat2 = DMat2x2;
+
+pub type DMat3 = DMat3x3;
+
+pub type DMat4 = DMat4x4;
+
 //
 
 /// 2 rows, 2 cols
@@ -10,7 +16,6 @@ pub struct DMat2x2 {
   pub r0c0: f64, pub r1c0: f64,
   pub r0c1: f64, pub r1c1: f64,
 }
-pub type DMat2 = DMat2x2;
 
 /// 2 rows, 3 cols
 #[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
@@ -51,7 +56,6 @@ pub struct DMat3x3 {
   pub r0c1: f64, pub r1c1: f64, pub r2c1: f64,
   pub r0c2: f64, pub r1c2: f64, pub r2c2: f64,
 }
-pub type DMat3 = DMat3x3;
 
 /// 3 rows, 4 cols
 #[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
@@ -93,7 +97,6 @@ pub struct DMat4x4 {
   pub r0c2: f64, pub r1c2: f64, pub r2c2: f64, pub r3c2: f64,
   pub r0c3: f64, pub r1c3: f64, pub r2c3: f64, pub r3c3: f64,
 }
-pub type DMat4 = DMat4x4;
 
 //
 

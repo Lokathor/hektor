@@ -1,5 +1,11 @@
 use super::*;
 
+pub type IMat2 = IMat2x2;
+
+pub type IMat3 = IMat3x3;
+
+pub type IMat4 = IMat4x4;
+
 //
 
 /// 2 rows, 2 cols
@@ -10,7 +16,6 @@ pub struct IMat2x2 {
   pub r0c0: i32, pub r1c0: i32,
   pub r0c1: i32, pub r1c1: i32,
 }
-pub type IMat2 = IMat2x2;
 
 /// 2 rows, 3 cols
 #[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
@@ -51,7 +56,6 @@ pub struct IMat3x3 {
   pub r0c1: i32, pub r1c1: i32, pub r2c1: i32,
   pub r0c2: i32, pub r1c2: i32, pub r2c2: i32,
 }
-pub type IMat3 = IMat3x3;
 
 /// 3 rows, 4 cols
 #[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Hash, Zeroable, Pod)]
@@ -93,7 +97,6 @@ pub struct IMat4x4 {
   pub r0c2: i32, pub r1c2: i32, pub r2c2: i32, pub r3c2: i32,
   pub r0c3: i32, pub r1c3: i32, pub r2c3: i32, pub r3c3: i32,
 }
-pub type IMat4 = IMat4x4;
 
 //
 
