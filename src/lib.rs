@@ -9,8 +9,8 @@ pub use f64_types::*;
 pub mod i32_types;
 pub use i32_types::*;
 
-pub mod deref;
-pub use deref::*;
+pub mod as_methods;
+pub use as_methods::*;
 
 pub mod addition;
 pub use addition::*;
@@ -26,3 +26,6 @@ pub use scaling::*;
 
 pub mod determinant;
 pub use determinant::*;
+
+pub mod identity;
+pub use identity::*;
