@@ -29,3 +29,13 @@ pub use determinant::*;
 
 pub mod identity;
 pub use identity::*;
+
+pub mod dot_product;
+pub use dot_product::*;
+
+pub mod free_constructors;
+pub use free_constructors::*;
+
+#[rustfmt::skip]
+pub mod multiplication;
+pub use multiplication::*;
