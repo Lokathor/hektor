@@ -1,16 +1,4 @@
-#![allow(bad_style)]
-
-use nalgebra as na;
-
-use hektor as h;
-
-fn approx_eq_f32(a: f32, b: f32) -> bool {
-  (a - b).abs() < 0.00000001
-}
-
-fn approx_eq_f64(a: f64, b: f64) -> bool {
-  (a - b).abs() < 0.00000000001
-}
+use super::*;
 
 #[test]
 fn test_Mat2x2_determinant() {
