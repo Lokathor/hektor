@@ -1,19 +1,23 @@
 use super::*;
 
 macro_rules! impl_scale_for {
-  ($m:ident<$t:ty> { $($f:ident),+ }) => {
-    impl core::ops::Mul<$t> for $m {
+  ($m:ident<$elem_t:ty> { $($field:ident),+ }) => {
+    // MatMxN * Element
+    impl core::ops::Mul<$elem_t> for $m {
       type Output = Self;
-      fn mul(self, rhs: $t) -> Self {
+      fn mul(self, rhs: $elem_t) -> Self {
         $m {
-          $( $f: self.$f * rhs ),+
+          $( $field: self.$field * rhs ),+
         }
       }
     }
-    impl core::ops::Mul<&$t> for $m {
-      type Output = Self;
-      fn mul(self, rhs: &$t) -> Self {
-        self * *rhs
+    // Element * MatMxN
+    impl core::ops::Mul<$m> for $elem_t {
+      type Output = $m;
+      fn mul(self, rhs: $m) -> $m {
+        $m {
+          $( $field: self * rhs.$field ),+
+        }
       }
     }
   }
