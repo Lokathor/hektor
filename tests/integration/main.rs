@@ -5,9 +5,6 @@ use nalgebra as na;
 
 use hektor as h;
 
-mod determinant;
-mod multiplication;
-
 #[allow(dead_code)]
 fn approx_eq_f32(a: f32, b: f32) -> bool {
   (a - b).abs() < 0.00000001
