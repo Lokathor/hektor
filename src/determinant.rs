@@ -5,12 +5,12 @@ impl Mat2x2 {
     self.r0c0 * self.r1c1 - self.r0c1 * self.r1c0
   }
 }
+/*
 impl DMat2x2 {
   pub fn determinant(self) -> f64 {
     self.r0c0 * self.r1c1 - self.r0c1 * self.r1c0
   }
 }
-/*
 impl IMat2x2 {
   pub fn determinant(self) -> i32 {
     self.r0c0 * self.r1c1 - self.r0c1 * self.r1c0
@@ -32,6 +32,7 @@ impl Mat3x3 {
     a11*a22*a33 - a13*a22*a31 + a12*a23*a31 - a12*a21*a33 + a13*a21*a32 - a11*a23*a32
   }
 }
+/*
 impl DMat3x3 {
   #[rustfmt::skip]
   pub fn determinant(self) -> f64 {
@@ -43,7 +44,6 @@ impl DMat3x3 {
     a11*a22*a33 - a13*a22*a31 + a12*a23*a31 - a12*a21*a33 + a13*a21*a32 - a11*a23*a32
   }
 }
-/*
 impl IMat3x3 {
   #[rustfmt::skip]
   pub fn determinant(self) -> i32 {
@@ -97,6 +97,7 @@ impl Mat4x4 {
     +a14*a23*a32*a41
   }
 }
+/*
 impl DMat4x4 {
   #[rustfmt::skip]
   pub fn determinant(self) -> f64 {
@@ -135,7 +136,6 @@ impl DMat4x4 {
     +a14*a23*a32*a41
   }
 }
-/*
 impl IMat4x4 {
   #[rustfmt::skip]
   pub fn determinant(self) -> i32 {

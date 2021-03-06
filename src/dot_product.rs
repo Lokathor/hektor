@@ -17,7 +17,7 @@ impl Vec4 {
     self.x * other.x + self.y * other.y + self.z * other.z + self.w * other.w
   }
 }
-
+/*
 impl DVec2 {
   pub fn dot(self, other: Self) -> f64 {
     self.x * other.x + self.y * other.y
@@ -53,3 +53,4 @@ impl IVec4 {
     self.x * other.x + self.y * other.y + self.z * other.z + self.w * other.w
   }
 }
+*/

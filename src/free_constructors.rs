@@ -4,6 +4,14 @@ pub const fn vec2(x: f32, y: f32) -> Vec2 {
   Vec2 { x, y }
 }
 
+pub const fn vec3(x: f32, y: f32, z: f32) -> Vec3 {
+  Vec3 { x, y, z }
+}
+
+pub const fn vec4(x: f32, y: f32, z: f32, w: f32) -> Vec4 {
+  Vec4 { x, y, z, w }
+}
+
 pub const fn mat2x2_row(r0c0: f32, r0c1: f32, r1c0: f32, r1c1: f32) -> Mat2x2 {
   Mat2x2 { r0c0, r0c1, r1c0, r1c1 }
 }

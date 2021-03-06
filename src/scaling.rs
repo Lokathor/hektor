@@ -36,6 +36,7 @@ impl_scale_for!(Vec2<f32> { x, y });
 impl_scale_for!(Vec3<f32> { x, y, z });
 impl_scale_for!(Vec4<f32> { x, y, z, w });
 
+/*
 impl_scale_for!(DMat2x2<f64> { r0c0, r1c0, r0c1, r1c1 });
 impl_scale_for!(DMat2x3<f64> { r0c0, r1c0, r0c1, r1c1, r0c2, r1c2 });
 impl_scale_for!(DMat2x4<f64> { r0c0, r1c0, r0c1, r1c1, r0c2, r1c2, r0c3, r1c3 });
@@ -61,3 +62,4 @@ impl_scale_for!(IMat4x4<i32> { r0c0, r1c0, r2c0, r3c0, r0c1, r1c1, r2c1, r3c1, r
 impl_scale_for!(IVec2<i32> { x, y });
 impl_scale_for!(IVec3<i32> { x, y, z });
 impl_scale_for!(IVec4<i32> { x, y, z, w });
+*/

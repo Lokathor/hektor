@@ -26,6 +26,7 @@ impl_neg_for!(Vec2 { x, y });
 impl_neg_for!(Vec3 { x, y, z });
 impl_neg_for!(Vec4 { x, y, z, w });
 
+/*
 impl_neg_for!(DMat2x2 { r0c0, r1c0, r0c1, r1c1 });
 impl_neg_for!(DMat2x3 { r0c0, r1c0, r0c1, r1c1, r0c2, r1c2 });
 impl_neg_for!(DMat2x4 { r0c0, r1c0, r0c1, r1c1, r0c2, r1c2, r0c3, r1c3 });
@@ -51,3 +52,4 @@ impl_neg_for!(IMat4x4 { r0c0, r1c0, r2c0, r3c0, r0c1, r1c1, r2c1, r3c1, r0c2, r1
 impl_neg_for!(IVec2 { x, y });
 impl_neg_for!(IVec3 { x, y, z });
 impl_neg_for!(IVec4 { x, y, z, w });
+*/
