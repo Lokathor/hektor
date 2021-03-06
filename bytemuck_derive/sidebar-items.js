@@ -1,0 +1,1 @@
+initSidebarItems({"derive":[["Contiguous","Derive the `Contiguous` trait for an enum"],["Pod","Derive the `Pod` trait for a struct"],["TransparentWrapper","Derive the `TransparentWrapper` trait for a struct"],["Zeroable","Derive the `Zeroable` trait for a struct"]]});
