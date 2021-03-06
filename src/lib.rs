@@ -36,6 +36,5 @@ pub use dot_product::*;
 pub mod free_constructors;
 pub use free_constructors::*;
 
-#[rustfmt::skip]
 pub mod multiplication;
 pub use multiplication::*;
