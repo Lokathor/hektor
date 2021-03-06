@@ -1,13 +1,7 @@
 use bytemuck::{Pod, Zeroable};
 
-pub mod f32_types;
-pub use f32_types::*;
-
-//pub mod f64_types;
-//pub use f64_types::*;
-
-//pub mod i32_types;
-//pub use i32_types::*;
+pub mod types_f32s;
+pub use types_f32s::*;
 
 pub mod as_methods;
 pub use as_methods::*;
