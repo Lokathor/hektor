@@ -100,7 +100,7 @@ pub struct Mat4x4 {
 
 //
 
-/// 2 elements
+/// 2D
 #[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
@@ -109,7 +109,7 @@ pub struct Vec2 {
   pub y: f32,
 }
 
-/// 3 elements
+/// 3D
 #[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
@@ -119,7 +119,7 @@ pub struct Vec3 {
   pub z: f32,
 }
 
-/// 4 elements
+/// 4D
 #[derive(Debug, Default, Clone, Copy, PartialEq, Zeroable, Pod)]
 #[repr(C)]
 #[rustfmt::skip]
