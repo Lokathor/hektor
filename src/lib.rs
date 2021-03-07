@@ -32,3 +32,6 @@ pub use free_constructors::*;
 
 mod multiplication;
 pub use multiplication::*;
+
+mod transpose;
+pub use transpose::*;
