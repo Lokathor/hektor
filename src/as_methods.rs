@@ -17,14 +17,14 @@ macro_rules! impl_deref_for {
       pub fn as_slice(&self) -> &[$element] {
         assert_eq!(core::mem::size_of::<$m>(), core::mem::size_of::<$element>() * $col_count * $row_count);
         unsafe {
-          core::slice::from_raw_parts(self as *const $m as *const $element, core::mem::size_of::<$element>() * $col_count * $row_count)
+          core::slice::from_raw_parts(self as *const $m as *const $element, $col_count * $row_count)
         }
       }
       /// All the (col-major) matrix data as a mutable slice
       pub fn as_slice_mut(&mut self) -> &mut [$element] {
         assert_eq!(core::mem::size_of::<$m>(), core::mem::size_of::<$element>() * $col_count * $row_count);
         unsafe {
-          core::slice::from_raw_parts_mut(self as *mut $m as *mut $element, core::mem::size_of::<$element>() * $col_count * $row_count)
+          core::slice::from_raw_parts_mut(self as *mut $m as *mut $element, $col_count * $row_count)
         }
       }
     }

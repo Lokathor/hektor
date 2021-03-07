@@ -1,7 +1,5 @@
 use super::*;
 
-use h::*;
-
 #[test]
 fn test_Mat2x2_transpose() {
   let a = mat2x2_rows([1.0, 2.0], [3.0, 4.0]);

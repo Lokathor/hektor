@@ -3,8 +3,9 @@
 
 use nalgebra as na;
 
-use hektor as h;
+use hektor::*;
 
+mod layout;
 mod transpose;
 
 #[allow(dead_code)]
