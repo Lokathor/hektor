@@ -18,9 +18,7 @@ fn approx_eq_f64(a: f64, b: f64) -> bool {
   (a - b).abs() < 0.00000000001
 }
 
-/// Clamps into the range 0.0 to 1.0.
-///
-/// This will even clamp -0.0 and NaN.
+/// Clamps into the range 0.0 to 1.0, including NaN and -0.0.
 #[allow(dead_code)]
 pub fn clamp01(v: f32) -> f32 {
   if v > 0.0 {
