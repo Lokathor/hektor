@@ -84,8 +84,6 @@
 <span id="81">81</span>
 <span id="82">82</span>
 <span id="83">83</span>
-<span id="84">84</span>
-<span id="85">85</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">super</span>::<span class="kw-2">*</span>;
 
@@ -101,57 +99,55 @@
   <span class="ident">Vec4</span> { <span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span>, <span class="ident">w</span> }
 }
 
-<span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat2x2_rows</span>(<span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat2x2</span> {
+<span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat2x2_rows</span>([<span class="ident">r0c0</span>, <span class="ident">r0c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>]) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat2x2</span> {
   <span class="ident">Mat2x2</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span> }
 }
 
-<span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat2x3_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r0c2</span>: <span class="ident">f32</span>, <span class="ident">r1c2</span>: <span class="ident">f32</span>,
-) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat2x3</span> {
+<span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat2x3_rows</span>([<span class="ident">r0c0</span>, <span class="ident">r0c1</span>, <span class="ident">r0c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>, <span class="ident">r1c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>]) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat2x3</span> {
   <span class="ident">Mat2x3</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span>, <span class="ident">r0c2</span>, <span class="ident">r1c2</span> }
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat2x4_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r0c2</span>: <span class="ident">f32</span>, <span class="ident">r1c2</span>: <span class="ident">f32</span>, <span class="ident">r0c3</span>: <span class="ident">f32</span>, <span class="ident">r1c3</span>: <span class="ident">f32</span>,
+  [<span class="ident">r0c0</span>, <span class="ident">r0c1</span>, <span class="ident">r0c2</span>, <span class="ident">r0c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>, <span class="ident">r1c2</span>, <span class="ident">r1c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>],
 ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat2x4</span> {
   <span class="ident">Mat2x4</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span>, <span class="ident">r0c2</span>, <span class="ident">r1c2</span>, <span class="ident">r0c3</span>, <span class="ident">r1c3</span> }
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat3x2_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r2c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r2c1</span>: <span class="ident">f32</span>,
+  [<span class="ident">r0c0</span>, <span class="ident">r0c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>], [<span class="ident">r2c0</span>, <span class="ident">r2c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>],
 ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat3x2</span> {
   <span class="ident">Mat3x2</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r2c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span>, <span class="ident">r2c1</span> }
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat3x3_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r2c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r2c1</span>: <span class="ident">f32</span>, <span class="ident">r0c2</span>: <span class="ident">f32</span>, <span class="ident">r1c2</span>: <span class="ident">f32</span>, <span class="ident">r2c2</span>: <span class="ident">f32</span>,
+  [<span class="ident">r0c0</span>, <span class="ident">r0c1</span>, <span class="ident">r0c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>, <span class="ident">r1c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>], [<span class="ident">r2c0</span>, <span class="ident">r2c1</span>, <span class="ident">r2c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>],
 ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat3x3</span> {
   <span class="ident">Mat3x3</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r2c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span>, <span class="ident">r2c1</span>, <span class="ident">r0c2</span>, <span class="ident">r1c2</span>, <span class="ident">r2c2</span> }
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat3x4_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r2c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r2c1</span>: <span class="ident">f32</span>, <span class="ident">r0c2</span>: <span class="ident">f32</span>, <span class="ident">r1c2</span>: <span class="ident">f32</span>,
-  <span class="ident">r2c2</span>: <span class="ident">f32</span>, <span class="ident">r0c3</span>: <span class="ident">f32</span>, <span class="ident">r1c3</span>: <span class="ident">f32</span>, <span class="ident">r2c3</span>: <span class="ident">f32</span>,
+  [<span class="ident">r0c0</span>, <span class="ident">r0c1</span>, <span class="ident">r0c2</span>, <span class="ident">r0c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>, <span class="ident">r1c2</span>, <span class="ident">r1c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>],
+  [<span class="ident">r2c0</span>, <span class="ident">r2c1</span>, <span class="ident">r2c2</span>, <span class="ident">r2c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>],
 ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat3x4</span> {
   <span class="ident">Mat3x4</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r2c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span>, <span class="ident">r2c1</span>, <span class="ident">r0c2</span>, <span class="ident">r1c2</span>, <span class="ident">r2c2</span>, <span class="ident">r0c3</span>, <span class="ident">r1c3</span>, <span class="ident">r2c3</span> }
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat4x2_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r2c0</span>: <span class="ident">f32</span>, <span class="ident">r3c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r2c1</span>: <span class="ident">f32</span>, <span class="ident">r3c1</span>: <span class="ident">f32</span>,
+  [<span class="ident">r0c0</span>, <span class="ident">r0c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>], [<span class="ident">r2c0</span>, <span class="ident">r2c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>], [<span class="ident">r3c0</span>, <span class="ident">r3c1</span>]: [<span class="ident">f32</span>; <span class="number">2</span>],
 ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat4x2</span> {
   <span class="ident">Mat4x2</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r2c0</span>, <span class="ident">r3c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span>, <span class="ident">r2c1</span>, <span class="ident">r3c1</span> }
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat4x3_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r2c0</span>: <span class="ident">f32</span>, <span class="ident">r3c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r2c1</span>: <span class="ident">f32</span>, <span class="ident">r3c1</span>: <span class="ident">f32</span>,
-  <span class="ident">r0c2</span>: <span class="ident">f32</span>, <span class="ident">r1c2</span>: <span class="ident">f32</span>, <span class="ident">r2c2</span>: <span class="ident">f32</span>, <span class="ident">r3c2</span>: <span class="ident">f32</span>,
+  [<span class="ident">r0c0</span>, <span class="ident">r0c1</span>, <span class="ident">r0c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>, <span class="ident">r1c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>], [<span class="ident">r2c0</span>, <span class="ident">r2c1</span>, <span class="ident">r2c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>],
+  [<span class="ident">r3c0</span>, <span class="ident">r3c1</span>, <span class="ident">r3c2</span>]: [<span class="ident">f32</span>; <span class="number">3</span>],
 ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat4x3</span> {
   <span class="ident">Mat4x3</span> { <span class="ident">r0c0</span>, <span class="ident">r1c0</span>, <span class="ident">r2c0</span>, <span class="ident">r3c0</span>, <span class="ident">r0c1</span>, <span class="ident">r1c1</span>, <span class="ident">r2c1</span>, <span class="ident">r3c1</span>, <span class="ident">r0c2</span>, <span class="ident">r1c2</span>, <span class="ident">r2c2</span>, <span class="ident">r3c2</span> }
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">mat4x4_rows</span>(
-  <span class="ident">r0c0</span>: <span class="ident">f32</span>, <span class="ident">r1c0</span>: <span class="ident">f32</span>, <span class="ident">r2c0</span>: <span class="ident">f32</span>, <span class="ident">r3c0</span>: <span class="ident">f32</span>, <span class="ident">r0c1</span>: <span class="ident">f32</span>, <span class="ident">r1c1</span>: <span class="ident">f32</span>, <span class="ident">r2c1</span>: <span class="ident">f32</span>, <span class="ident">r3c1</span>: <span class="ident">f32</span>,
-  <span class="ident">r0c2</span>: <span class="ident">f32</span>, <span class="ident">r1c2</span>: <span class="ident">f32</span>, <span class="ident">r2c2</span>: <span class="ident">f32</span>, <span class="ident">r3c2</span>: <span class="ident">f32</span>, <span class="ident">r0c3</span>: <span class="ident">f32</span>, <span class="ident">r1c3</span>: <span class="ident">f32</span>, <span class="ident">r2c3</span>: <span class="ident">f32</span>, <span class="ident">r3c3</span>: <span class="ident">f32</span>,
+  [<span class="ident">r0c0</span>, <span class="ident">r0c1</span>, <span class="ident">r0c2</span>, <span class="ident">r0c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>], [<span class="ident">r1c0</span>, <span class="ident">r1c1</span>, <span class="ident">r1c2</span>, <span class="ident">r1c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>],
+  [<span class="ident">r2c0</span>, <span class="ident">r2c1</span>, <span class="ident">r2c2</span>, <span class="ident">r2c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>], [<span class="ident">r3c0</span>, <span class="ident">r3c1</span>, <span class="ident">r3c2</span>, <span class="ident">r3c3</span>]: [<span class="ident">f32</span>; <span class="number">4</span>],
 ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Mat4x4</span> {
   <span class="ident">Mat4x4</span> {
     <span class="ident">r0c0</span>,
