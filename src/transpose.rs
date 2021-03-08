@@ -38,7 +38,12 @@ impl Mat3x3 {
 impl Mat3x4 {
   pub fn transpose(self) -> Mat4x3 {
     let s = self.as_slice();
-    mat4x3_rows([s[0], s[1], s[2]], [s[3], s[4], s[5]], [s[6], s[7], s[8]], [s[9], s[10], s[11]])
+    mat4x3_rows(
+      [s[0], s[1], s[2]],
+      [s[3], s[4], s[5]],
+      [s[6], s[7], s[8]],
+      [s[9], s[10], s[11]],
+    )
   }
 }
 
@@ -52,7 +57,11 @@ impl Mat4x2 {
 impl Mat4x3 {
   pub fn transpose(self) -> Mat3x4 {
     let s = self.as_slice();
-    mat3x4_rows([s[0], s[1], s[2], s[3]], [s[4], s[5], s[6], s[7]], [s[8], s[9], s[10], s[11]])
+    mat3x4_rows(
+      [s[0], s[1], s[2], s[3]],
+      [s[4], s[5], s[6], s[7]],
+      [s[8], s[9], s[10], s[11]],
+    )
   }
 }
 

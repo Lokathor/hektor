@@ -19,7 +19,12 @@ impl Mul<Mat2x2> for Mat2x2 {
     let lr1 = vec2(self.r1c0, self.r1c1);
     let rc0 = vec2(k.r0c0, k.r1c0);
     let rc1 = vec2(k.r0c1, k.r1c1);
-    Mat2x2 { r0c0: lr0.dot(rc0), r0c1: lr0.dot(rc1), r1c0: lr1.dot(rc0), r1c1: lr1.dot(rc1) }
+    Mat2x2 {
+      r0c0: lr0.dot(rc0),
+      r0c1: lr0.dot(rc1),
+      r1c0: lr1.dot(rc0),
+      r1c1: lr1.dot(rc1),
+    }
   }
 }
 
@@ -71,7 +76,10 @@ impl Mul<Vec3> for Mat2x3 {
 
   fn mul(self, v: Vec3) -> Vec2 {
     let m = self;
-    Vec2 { x: vec3(m.r0c0, m.r0c1, m.r0c2).dot(v), y: vec3(m.r1c0, m.r1c1, m.r1c2).dot(v) }
+    Vec2 {
+      x: vec3(m.r0c0, m.r0c1, m.r0c2).dot(v),
+      y: vec3(m.r1c0, m.r1c1, m.r1c2).dot(v),
+    }
   }
 }
 
@@ -83,7 +91,12 @@ impl Mul<Mat3x2> for Mat2x3 {
     let lr1 = vec3(self.r1c0, self.r1c1, self.r1c2);
     let rc0 = vec3(k.r0c0, k.r1c0, k.r2c0);
     let rc1 = vec3(k.r0c1, k.r1c1, k.r2c1);
-    Mat2x2 { r0c0: lr0.dot(rc0), r0c1: lr0.dot(rc1), r1c0: lr1.dot(rc0), r1c1: lr1.dot(rc1) }
+    Mat2x2 {
+      r0c0: lr0.dot(rc0),
+      r0c1: lr0.dot(rc1),
+      r1c0: lr1.dot(rc0),
+      r1c1: lr1.dot(rc1),
+    }
   }
 }
 
@@ -150,7 +163,12 @@ impl Mul<Mat4x2> for Mat2x4 {
     let lr1 = vec4(self.r1c0, self.r1c1, self.r1c2, self.r1c3);
     let rc0 = vec4(k.r0c0, k.r1c0, k.r2c0, k.r3c0);
     let rc1 = vec4(k.r0c1, k.r1c1, k.r2c1, k.r3c1);
-    Mat2x2 { r0c0: lr0.dot(rc0), r0c1: lr0.dot(rc1), r1c0: lr1.dot(rc0), r1c1: lr1.dot(rc1) }
+    Mat2x2 {
+      r0c0: lr0.dot(rc0),
+      r0c1: lr0.dot(rc1),
+      r1c0: lr1.dot(rc0),
+      r1c1: lr1.dot(rc1),
+    }
   }
 }
 

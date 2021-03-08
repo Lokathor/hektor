@@ -34,8 +34,17 @@ fn test_Mat3x3_transpose() {
 
 #[test]
 fn test_Mat3x4_and_Mat4x3_transpose() {
-  let a = mat3x4_rows([1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0], [9.0, 10.0, 11.0, 12.0]);
-  let b = mat4x3_rows([1.0, 5.0, 9.0], [2.0, 6.0, 10.0], [3.0, 7.0, 11.0], [4.0, 8.0, 12.0]);
+  let a = mat3x4_rows(
+    [1.0, 2.0, 3.0, 4.0],
+    [5.0, 6.0, 7.0, 8.0],
+    [9.0, 10.0, 11.0, 12.0],
+  );
+  let b = mat4x3_rows(
+    [1.0, 5.0, 9.0],
+    [2.0, 6.0, 10.0],
+    [3.0, 7.0, 11.0],
+    [4.0, 8.0, 12.0],
+  );
   assert_eq!(a.transpose(), b);
   assert_eq!(a.transpose().transpose(), a);
 }
