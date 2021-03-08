@@ -748,6 +748,24 @@
 <span id="745">745</span>
 <span id="746">746</span>
 <span id="747">747</span>
+<span id="748">748</span>
+<span id="749">749</span>
+<span id="750">750</span>
+<span id="751">751</span>
+<span id="752">752</span>
+<span id="753">753</span>
+<span id="754">754</span>
+<span id="755">755</span>
+<span id="756">756</span>
+<span id="757">757</span>
+<span id="758">758</span>
+<span id="759">759</span>
+<span id="760">760</span>
+<span id="761">761</span>
+<span id="762">762</span>
+<span id="763">763</span>
+<span id="764">764</span>
+<span id="765">765</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">super</span>::<span class="kw-2">*</span>;
 
@@ -770,7 +788,12 @@
     <span class="kw">let</span> <span class="ident">lr1</span> <span class="op">=</span> <span class="ident">vec2</span>(<span class="self">self</span>.<span class="ident">r1c0</span>, <span class="self">self</span>.<span class="ident">r1c1</span>);
     <span class="kw">let</span> <span class="ident">rc0</span> <span class="op">=</span> <span class="ident">vec2</span>(<span class="ident">k</span>.<span class="ident">r0c0</span>, <span class="ident">k</span>.<span class="ident">r1c0</span>);
     <span class="kw">let</span> <span class="ident">rc1</span> <span class="op">=</span> <span class="ident">vec2</span>(<span class="ident">k</span>.<span class="ident">r0c1</span>, <span class="ident">k</span>.<span class="ident">r1c1</span>);
-    <span class="ident">Mat2x2</span> { <span class="ident">r0c0</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>), <span class="ident">r0c1</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>), <span class="ident">r1c0</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>), <span class="ident">r1c1</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>) }
+    <span class="ident">Mat2x2</span> {
+      <span class="ident">r0c0</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>),
+      <span class="ident">r0c1</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>),
+      <span class="ident">r1c0</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>),
+      <span class="ident">r1c1</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>),
+    }
   }
 }
 
@@ -822,7 +845,10 @@
 
   <span class="kw">fn</span> <span class="ident">mul</span>(<span class="self">self</span>, <span class="ident">v</span>: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Vec2</span> {
     <span class="kw">let</span> <span class="ident">m</span> <span class="op">=</span> <span class="self">self</span>;
-    <span class="ident">Vec2</span> { <span class="ident">x</span>: <span class="ident">vec3</span>(<span class="ident">m</span>.<span class="ident">r0c0</span>, <span class="ident">m</span>.<span class="ident">r0c1</span>, <span class="ident">m</span>.<span class="ident">r0c2</span>).<span class="ident">dot</span>(<span class="ident">v</span>), <span class="ident">y</span>: <span class="ident">vec3</span>(<span class="ident">m</span>.<span class="ident">r1c0</span>, <span class="ident">m</span>.<span class="ident">r1c1</span>, <span class="ident">m</span>.<span class="ident">r1c2</span>).<span class="ident">dot</span>(<span class="ident">v</span>) }
+    <span class="ident">Vec2</span> {
+      <span class="ident">x</span>: <span class="ident">vec3</span>(<span class="ident">m</span>.<span class="ident">r0c0</span>, <span class="ident">m</span>.<span class="ident">r0c1</span>, <span class="ident">m</span>.<span class="ident">r0c2</span>).<span class="ident">dot</span>(<span class="ident">v</span>),
+      <span class="ident">y</span>: <span class="ident">vec3</span>(<span class="ident">m</span>.<span class="ident">r1c0</span>, <span class="ident">m</span>.<span class="ident">r1c1</span>, <span class="ident">m</span>.<span class="ident">r1c2</span>).<span class="ident">dot</span>(<span class="ident">v</span>),
+    }
   }
 }
 
@@ -834,7 +860,12 @@
     <span class="kw">let</span> <span class="ident">lr1</span> <span class="op">=</span> <span class="ident">vec3</span>(<span class="self">self</span>.<span class="ident">r1c0</span>, <span class="self">self</span>.<span class="ident">r1c1</span>, <span class="self">self</span>.<span class="ident">r1c2</span>);
     <span class="kw">let</span> <span class="ident">rc0</span> <span class="op">=</span> <span class="ident">vec3</span>(<span class="ident">k</span>.<span class="ident">r0c0</span>, <span class="ident">k</span>.<span class="ident">r1c0</span>, <span class="ident">k</span>.<span class="ident">r2c0</span>);
     <span class="kw">let</span> <span class="ident">rc1</span> <span class="op">=</span> <span class="ident">vec3</span>(<span class="ident">k</span>.<span class="ident">r0c1</span>, <span class="ident">k</span>.<span class="ident">r1c1</span>, <span class="ident">k</span>.<span class="ident">r2c1</span>);
-    <span class="ident">Mat2x2</span> { <span class="ident">r0c0</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>), <span class="ident">r0c1</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>), <span class="ident">r1c0</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>), <span class="ident">r1c1</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>) }
+    <span class="ident">Mat2x2</span> {
+      <span class="ident">r0c0</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>),
+      <span class="ident">r0c1</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>),
+      <span class="ident">r1c0</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>),
+      <span class="ident">r1c1</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>),
+    }
   }
 }
 
@@ -901,7 +932,12 @@
     <span class="kw">let</span> <span class="ident">lr1</span> <span class="op">=</span> <span class="ident">vec4</span>(<span class="self">self</span>.<span class="ident">r1c0</span>, <span class="self">self</span>.<span class="ident">r1c1</span>, <span class="self">self</span>.<span class="ident">r1c2</span>, <span class="self">self</span>.<span class="ident">r1c3</span>);
     <span class="kw">let</span> <span class="ident">rc0</span> <span class="op">=</span> <span class="ident">vec4</span>(<span class="ident">k</span>.<span class="ident">r0c0</span>, <span class="ident">k</span>.<span class="ident">r1c0</span>, <span class="ident">k</span>.<span class="ident">r2c0</span>, <span class="ident">k</span>.<span class="ident">r3c0</span>);
     <span class="kw">let</span> <span class="ident">rc1</span> <span class="op">=</span> <span class="ident">vec4</span>(<span class="ident">k</span>.<span class="ident">r0c1</span>, <span class="ident">k</span>.<span class="ident">r1c1</span>, <span class="ident">k</span>.<span class="ident">r2c1</span>, <span class="ident">k</span>.<span class="ident">r3c1</span>);
-    <span class="ident">Mat2x2</span> { <span class="ident">r0c0</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>), <span class="ident">r0c1</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>), <span class="ident">r1c0</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>), <span class="ident">r1c1</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>) }
+    <span class="ident">Mat2x2</span> {
+      <span class="ident">r0c0</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>),
+      <span class="ident">r0c1</span>: <span class="ident">lr0</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>),
+      <span class="ident">r1c0</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc0</span>),
+      <span class="ident">r1c1</span>: <span class="ident">lr1</span>.<span class="ident">dot</span>(<span class="ident">rc1</span>),
+    }
   }
 }
 
