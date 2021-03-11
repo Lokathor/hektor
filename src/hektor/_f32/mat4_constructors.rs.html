@@ -133,7 +133,7 @@
 <span class="kw">use</span> <span class="kw">super</span>::<span class="kw-2">*</span>;
 
 <span class="kw">impl</span> <span class="ident">Mat4x4</span> {
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">translation</span>(<span class="ident">Vec3</span> { <span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span> }: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_translation</span>(<span class="ident">Vec3</span> { <span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span> }: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="ident">mat4x4_rows</span>(
       [<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="ident">x</span>],
       [<span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="ident">y</span>],
@@ -142,7 +142,7 @@
     )
   }
 
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">scale</span>(<span class="ident">Vec3</span> { <span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span> }: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_scale</span>(<span class="ident">Vec3</span> { <span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span> }: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="ident">mat4x4_rows</span>(
       [<span class="ident">x</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
       [<span class="number">0.0</span>, <span class="ident">y</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
@@ -152,7 +152,7 @@
   }
 
   <span class="doccomment">/// radians!</span>
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">x_rotation</span>(<span class="ident">r</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_x_rotation</span>(<span class="ident">r</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="ident">mat4x4_rows</span>(
       [<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
       [<span class="number">0.0</span>, <span class="ident">r</span>.<span class="ident">cos</span>(), <span class="ident">r</span>.<span class="ident">sin</span>(), <span class="number">0.0</span>],
@@ -162,7 +162,7 @@
   }
 
   <span class="doccomment">/// radians!</span>
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">y_rotation</span>(<span class="ident">r</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_y_rotation</span>(<span class="ident">r</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="ident">mat4x4_rows</span>(
       [<span class="ident">r</span>.<span class="ident">cos</span>(), <span class="number">0.0</span>, <span class="op">-</span>(<span class="ident">r</span>.<span class="ident">sin</span>()), <span class="number">0.0</span>],
       [<span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
@@ -172,7 +172,7 @@
   }
 
   <span class="doccomment">/// radians!</span>
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">z_rotation</span>(<span class="ident">r</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_z_rotation</span>(<span class="ident">r</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="ident">mat4x4_rows</span>(
       [<span class="ident">r</span>.<span class="ident">cos</span>(), <span class="op">-</span><span class="ident">r</span>.<span class="ident">sin</span>(), <span class="number">0.0</span>, <span class="number">0.0</span>],
       [<span class="ident">r</span>.<span class="ident">sin</span>(), <span class="ident">r</span>.<span class="ident">cos</span>(), <span class="number">0.0</span>, <span class="number">0.0</span>],
@@ -183,7 +183,7 @@
 
   <span class="doccomment">/// radians!</span>
   <span class="attribute">#[<span class="ident">rustfmt</span>::<span class="ident">skip</span>]</span>
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">xyz_rotation</span>(<span class="ident">x</span>: <span class="ident">f32</span>, <span class="ident">y</span>: <span class="ident">f32</span>, <span class="ident">z</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_xyz_rotation</span>(<span class="ident">x</span>: <span class="ident">f32</span>, <span class="ident">y</span>: <span class="ident">f32</span>, <span class="ident">z</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="kw">let</span> <span class="ident">cx</span> <span class="op">=</span> <span class="ident">x</span>.<span class="ident">cos</span>();
     <span class="kw">let</span> <span class="ident">cy</span> <span class="op">=</span> <span class="ident">y</span>.<span class="ident">cos</span>();
     <span class="kw">let</span> <span class="ident">cz</span> <span class="op">=</span> <span class="ident">z</span>.<span class="ident">cos</span>();
@@ -216,7 +216,7 @@
   }
 
   <span class="attribute">#[<span class="ident">rustfmt</span>::<span class="ident">skip</span>]</span>
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">look_at</span>(<span class="ident">eye_pos</span>: <span class="ident">Vec3</span>, <span class="ident">target</span>: <span class="ident">Vec3</span>, <span class="ident">up</span>: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_look_at</span>(<span class="ident">eye_pos</span>: <span class="ident">Vec3</span>, <span class="ident">target</span>: <span class="ident">Vec3</span>, <span class="ident">up</span>: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="kw">let</span> <span class="ident">front</span> <span class="op">=</span> (<span class="ident">target</span> <span class="op">-</span> <span class="ident">eye_pos</span>).<span class="ident">normalized</span>();
     <span class="kw">let</span> <span class="ident">right</span> <span class="op">=</span> <span class="ident">front</span>.<span class="ident">cross</span>(<span class="ident">up</span>).<span class="ident">normalized</span>();
     <span class="kw">let</span> <span class="ident">up</span> <span class="op">=</span> <span class="ident">right</span>.<span class="ident">cross</span>(<span class="ident">front</span>);
@@ -229,7 +229,7 @@
   }
 
   <span class="attribute">#[<span class="ident">rustfmt</span>::<span class="ident">skip</span>]</span>
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">perspective</span>(<span class="ident">v_fov</span>: <span class="ident">f32</span>, <span class="ident">aspect_ratio</span>: <span class="ident">f32</span>, <span class="ident">z_near</span>: <span class="ident">f32</span>, <span class="ident">z_far</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_perspective</span>(<span class="ident">v_fov</span>: <span class="ident">f32</span>, <span class="ident">aspect_ratio</span>: <span class="ident">f32</span>, <span class="ident">z_near</span>: <span class="ident">f32</span>, <span class="ident">z_far</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="kw">let</span> <span class="ident">t</span> <span class="op">=</span> (<span class="ident">v_fov</span> <span class="op">*</span> <span class="number">0.5</span>).<span class="ident">tan</span>();
     <span class="kw">let</span> <span class="ident">sy</span> <span class="op">=</span> <span class="number">1.0</span> <span class="op">/</span> <span class="ident">t</span>;
     <span class="kw">let</span> <span class="ident">sx</span> <span class="op">=</span> <span class="ident">sy</span> <span class="op">/</span> <span class="ident">aspect_ratio</span>;
@@ -243,7 +243,7 @@
   }
 
   <span class="attribute">#[<span class="ident">rustfmt</span>::<span class="ident">skip</span>]</span>
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">orthographic</span>(<span class="ident">left</span>: <span class="ident">f32</span>, <span class="ident">right</span>: <span class="ident">f32</span>, <span class="ident">bottom</span>: <span class="ident">f32</span>, <span class="ident">top</span>: <span class="ident">f32</span>, <span class="ident">near</span>: <span class="ident">f32</span>, <span class="ident">far</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_orthographic</span>(<span class="ident">left</span>: <span class="ident">f32</span>, <span class="ident">right</span>: <span class="ident">f32</span>, <span class="ident">bottom</span>: <span class="ident">f32</span>, <span class="ident">top</span>: <span class="ident">f32</span>, <span class="ident">near</span>: <span class="ident">f32</span>, <span class="ident">far</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="kw">let</span> <span class="ident">r_m_l</span> <span class="op">=</span> <span class="ident">right</span> <span class="op">-</span> <span class="ident">left</span>;
     <span class="kw">let</span> <span class="ident">r_p_l</span> <span class="op">=</span> <span class="ident">right</span> <span class="op">+</span> <span class="ident">left</span>;
     <span class="kw">let</span> <span class="ident">t_m_b</span> <span class="op">=</span> <span class="ident">top</span> <span class="op">-</span> <span class="ident">bottom</span>;
