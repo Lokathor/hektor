@@ -1,20 +1,20 @@
 use super::*;
 
 impl Mat4x4 {
-  pub fn from_translation(Vec3 { x, y, z }: Vec3) -> Self {
+  pub fn from_translation(v: Vec3) -> Self {
     mat4x4_rows(
-      [1.0, 0.0, 0.0, x],
-      [0.0, 1.0, 0.0, y],
-      [0.0, 0.0, 1.0, z],
+      [1.0, 0.0, 0.0, v.x],
+      [0.0, 1.0, 0.0, v.y],
+      [0.0, 0.0, 1.0, v.z],
       [0.0, 0.0, 0.0, 1.0],
     )
   }
 
-  pub fn from_scale(Vec3 { x, y, z }: Vec3) -> Self {
+  pub fn from_scale(v: Vec3) -> Self {
     mat4x4_rows(
-      [x, 0.0, 0.0, 0.0],
-      [0.0, y, 0.0, 0.0],
-      [0.0, 0.0, z, 0.0],
+      [v.x, 0.0, 0.0, 0.0],
+      [0.0, v.y, 0.0, 0.0],
+      [0.0, 0.0, v.z, 0.0],
       [0.0, 0.0, 0.0, 1.0],
     )
   }
