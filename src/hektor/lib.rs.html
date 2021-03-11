@@ -66,53 +66,65 @@
 <span id="63">63</span>
 <span id="64">64</span>
 <span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
 </pre><div class="example-wrap"><pre class="rust ">
-<span class="kw">use</span> <span class="ident">bytemuck</span>::{<span class="ident">Pod</span>, <span class="ident">Zeroable</span>};
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">_f32</span>::<span class="kw-2">*</span>;
+<span class="kw">mod</span> <span class="ident">_f32</span> {
+  <span class="kw">mod</span> <span class="ident">structures</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">structures</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">types_f32s</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">types_f32s</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">as_methods</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">as_methods</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">as_methods</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">as_methods</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">addition</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">addition</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">addition</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">addition</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">subtraction</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">subtraction</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">subtraction</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">subtraction</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">negation</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">negation</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">negation</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">negation</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">scaling</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">scaling</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">scaling</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">scaling</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">determinant</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">determinant</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">determinant</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">determinant</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">identity</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">identity</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">identity</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">identity</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">dot_product</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">dot_product</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">dot_product</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">dot_product</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">free_constructors</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">free_constructors</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">free_constructors</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">free_constructors</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">multiplication</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">multiplication</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">multiplication</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">multiplication</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">transpose</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">transpose</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">transpose</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">transpose</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">length</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">length</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">length</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">length</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">reflect</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">reflect</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">reflect</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">reflect</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">refract</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">refract</span>::<span class="kw-2">*</span>;
 
-<span class="kw">mod</span> <span class="ident">refract</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">refract</span>::<span class="kw-2">*</span>;
+  <span class="kw">mod</span> <span class="ident">mat4_constructors</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">mat4_constructors</span>::<span class="kw-2">*</span>;
+
+  <span class="kw">mod</span> <span class="ident">cross</span>;
+  <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">cross</span>::<span class="kw-2">*</span>;
+}
 
 <span class="doccomment">/// Clamps into the range 0.0 to 1.0, even NaN and -0.0.</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clamp01</span>(<span class="ident">v</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">f32</span> {
@@ -130,8 +142,6 @@
 <span class="comment">// TODO: quaternions? or rotors?</span>
 
 <span class="comment">// TODO: curves? splines?</span>
-
-<span class="comment">// TODO: normalize (vectors)</span>
 </pre></div>
 </section><section id="search" class="content hidden"></section><section class="footer"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="hektor" data-search-js="../../search-index.js"></div>
     <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script></body></html>
