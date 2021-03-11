@@ -45,6 +45,12 @@ pub use reflect::*;
 mod refract;
 pub use refract::*;
 
+mod mat4_constructors;
+pub use mat4_constructors::*;
+
+mod cross;
+pub use cross::*;
+
 /// Clamps into the range 0.0 to 1.0, even NaN and -0.0.
 pub fn clamp01(v: f32) -> f32 {
   if v > 0.0 {
