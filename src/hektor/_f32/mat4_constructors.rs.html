@@ -133,20 +133,20 @@
 <span class="kw">use</span> <span class="kw">super</span>::<span class="kw-2">*</span>;
 
 <span class="kw">impl</span> <span class="ident">Mat4x4</span> {
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_translation</span>(<span class="ident">Vec3</span> { <span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span> }: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_translation</span>(<span class="ident">v</span>: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="ident">mat4x4_rows</span>(
-      [<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="ident">x</span>],
-      [<span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="ident">y</span>],
-      [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="ident">z</span>],
+      [<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="ident">v</span>.<span class="ident">x</span>],
+      [<span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>, <span class="ident">v</span>.<span class="ident">y</span>],
+      [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="ident">v</span>.<span class="ident">z</span>],
       [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>],
     )
   }
 
-  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_scale</span>(<span class="ident">Vec3</span> { <span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span> }: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+  <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_scale</span>(<span class="ident">v</span>: <span class="ident">Vec3</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
     <span class="ident">mat4x4_rows</span>(
-      [<span class="ident">x</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
-      [<span class="number">0.0</span>, <span class="ident">y</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
-      [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="ident">z</span>, <span class="number">0.0</span>],
+      [<span class="ident">v</span>.<span class="ident">x</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
+      [<span class="number">0.0</span>, <span class="ident">v</span>.<span class="ident">y</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],
+      [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="ident">v</span>.<span class="ident">z</span>, <span class="number">0.0</span>],
       [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>],
     )
   }
