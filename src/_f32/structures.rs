@@ -1,4 +1,4 @@
-use super::*;
+use bytemuck::{Pod, Zeroable};
 
 pub type Mat2 = Mat2x2;
 
