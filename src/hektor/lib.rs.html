@@ -61,17 +61,10 @@
 <span id="58">58</span>
 <span id="59">59</span>
 <span id="60">60</span>
-<span id="61">61</span>
-<span id="62">62</span>
-<span id="63">63</span>
-<span id="64">64</span>
-<span id="65">65</span>
-<span id="66">66</span>
-<span id="67">67</span>
-<span id="68">68</span>
-<span id="69">69</span>
-<span id="70">70</span>
 </pre><div class="example-wrap"><pre class="rust ">
+<span class="kw">mod</span> <span class="ident">clamp01</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">clamp01</span>::<span class="kw-2">*</span>;
+
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">_f32</span>::<span class="kw-2">*</span>;
 <span class="kw">mod</span> <span class="ident">_f32</span> {
   <span class="kw">mod</span> <span class="ident">structures</span>;
@@ -124,19 +117,6 @@
 
   <span class="kw">mod</span> <span class="ident">cross</span>;
   <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">cross</span>::<span class="kw-2">*</span>;
-}
-
-<span class="doccomment">/// Clamps into the range 0.0 to 1.0, even NaN and -0.0.</span>
-<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clamp01</span>(<span class="ident">v</span>: <span class="ident">f32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">f32</span> {
-  <span class="kw">if</span> <span class="ident">v</span> <span class="op">&gt;</span> <span class="number">0.0</span> {
-    <span class="kw">if</span> <span class="ident">v</span> <span class="op">&lt;</span><span class="op">=</span> <span class="number">1.0</span> {
-      <span class="ident">v</span>
-    } <span class="kw">else</span> {
-      <span class="number">1.0</span>
-    }
-  } <span class="kw">else</span> {
-    <span class="number">0.0</span>
-  }
 }
 
 <span class="comment">// TODO: quaternions? or rotors?</span>
