@@ -1,3 +1,6 @@
+mod clamp01;
+pub use clamp01::*;
+
 pub use _f32::*;
 mod _f32 {
   mod structures;
@@ -50,19 +53,6 @@ mod _f32 {
 
   mod cross;
   pub use cross::*;
-}
-
-/// Clamps into the range 0.0 to 1.0, even NaN and -0.0.
-pub fn clamp01(v: f32) -> f32 {
-  if v > 0.0 {
-    if v <= 1.0 {
-      v
-    } else {
-      1.0
-    }
-  } else {
-    0.0
-  }
 }
 
 // TODO: quaternions? or rotors?

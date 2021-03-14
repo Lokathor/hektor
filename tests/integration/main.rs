@@ -5,6 +5,7 @@ use nalgebra as na;
 
 use hektor::*;
 
+mod clamp01;
 mod layout;
 mod transpose;
 

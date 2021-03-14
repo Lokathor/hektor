@@ -1,3 +1,6 @@
+//! Dot Product: component-wise multiplication between two vectors, then
+//! horizontal sum of the elements.
+
 use super::*;
 
 impl Vec2 {
