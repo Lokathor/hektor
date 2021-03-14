@@ -51,26 +51,24 @@
 <span id="48">48</span>
 <span id="49">49</span>
 <span id="50">50</span>
-<span id="51">51</span>
-<span id="52">52</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="doccomment">/// Provides the `clamp01` operation.</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// ## Safety</span>
-<span class="doccomment">/// Because this trait is `unsafe`, other `unsafe` code can rely on all</span>
-<span class="doccomment">/// implementations of this trait upholding the contract.</span>
+<span class="doccomment">/// The clamped output will be in the range `0.0 ..= 1.0` (the &quot;unit&quot; range).</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// Most importantly, when you use the output of this method to scale a value</span>
-<span class="doccomment">/// within a 0 to X range, you can be assured that it&#39;s still in that range.</span>
+<span class="doccomment">/// ## Safety</span>
+<span class="doccomment">/// * All possible input values must be clamped into the unit range.</span>
+<span class="doccomment">/// * Infinite values must become a finite value:</span>
+<span class="doccomment">///   * Infinity becomes `1.0`</span>
+<span class="doccomment">///   * Negative Infinity becomes `0.0`</span>
+<span class="doccomment">///   * NaN becomes `0.0`</span>
+<span class="doccomment">/// * The value `-0.0` must have the sign bit cleared.</span>
 <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">trait</span> <span class="ident">Clamp01</span> {
-  <span class="doccomment">/// Clamps a floating value to `0.0 ..= 1.0`.</span>
-  <span class="doccomment">///</span>
-  <span class="doccomment">/// * All possible input values must be clamped into the specified range.</span>
-  <span class="doccomment">/// * Infinity becomes 1.0, and Negative Infinity becomes 0.0.</span>
-  <span class="doccomment">/// * NaN becomes an implementation defined value in range.</span>
-  <span class="doccomment">/// * -0.0 must have the sign bit cleared.</span>
+  <span class="doccomment">/// Clamps the value to the range `0.0 ..= 1.0`</span>
   <span class="kw">fn</span> <span class="ident">clamp01</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span>;
 }
+
+<span class="comment">// TODO: impls for vector and matrix types?</span>
 
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Clamp01</span> <span class="kw">for</span> <span class="ident">f32</span> {
   <span class="kw">fn</span> <span class="ident">clamp01</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">f32</span> {
@@ -99,8 +97,6 @@
     }
   }
 }
-
-<span class="comment">// TODO: impls for vector and matrix types?</span>
 
 <span class="doccomment">/// A free-function way to use the [`Clamp01`] trait.</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clamp01</span><span class="op">&lt;</span><span class="ident">C</span>: <span class="ident">Clamp01</span><span class="op">&gt;</span>(<span class="ident">x</span>: <span class="ident">C</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">C</span> {
