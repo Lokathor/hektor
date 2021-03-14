@@ -1,20 +1,20 @@
 /// Provides the `clamp01` operation.
 ///
-/// ## Safety
-/// Because this trait is `unsafe`, other `unsafe` code can rely on all
-/// implementations of this trait upholding the contract.
+/// The clamped output will be in the range `0.0 ..= 1.0` (the "unit" range).
 ///
-/// Most importantly, when you use the output of this method to scale a value
-/// within a 0 to X range, you can be assured that it's still in that range.
+/// ## Safety
+/// * All possible input values must be clamped into the unit range.
+/// * Infinite values must become a finite value:
+///   * Infinity becomes `1.0`
+///   * Negative Infinity becomes `0.0`
+///   * NaN becomes `0.0`
+/// * The value `-0.0` must have the sign bit cleared.
 pub unsafe trait Clamp01 {
-  /// Clamps a floating value to `0.0 ..= 1.0`.
-  ///
-  /// * All possible input values must be clamped into the specified range.
-  /// * Infinity becomes 1.0, and Negative Infinity becomes 0.0.
-  /// * NaN becomes an implementation defined value in range.
-  /// * -0.0 must have the sign bit cleared.
+  /// Clamps the value to the range `0.0 ..= 1.0`
   fn clamp01(self) -> Self;
 }
+
+// TODO: impls for vector and matrix types?
 
 unsafe impl Clamp01 for f32 {
   fn clamp01(self) -> f32 {
@@ -43,8 +43,6 @@ unsafe impl Clamp01 for f64 {
     }
   }
 }
-
-// TODO: impls for vector and matrix types?
 
 /// A free-function way to use the [`Clamp01`] trait.
 pub fn clamp01<C: Clamp01>(x: C) -> C {

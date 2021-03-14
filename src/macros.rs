@@ -15,7 +15,7 @@
 // pub(crate) use /* prelude_here:: */ example as /* self:: */ example;
 // ```
 
-macro_rules! impl_deref_for {
+macro_rules! impl_as_array_as_slice_for {
   ($m:ident, [[$element:ty; $row_count:literal]; $col_count:literal]) => {
     impl $m {
       /// Since these are col-major, you get `col` arrays of `row` each.
@@ -69,7 +69,7 @@ macro_rules! impl_deref_for {
     }
   }
 }
-pub(crate) use impl_deref_for;
+pub(crate) use impl_as_array_as_slice_for;
 
 macro_rules! impl_add_for {
   ($m:ident { $($f:ident),+ }) => {
