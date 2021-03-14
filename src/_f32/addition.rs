@@ -1,35 +1,5 @@
 use super::*;
 
-macro_rules! impl_add_for {
-  ($m:ident { $($f:ident),+ }) => {
-    impl core::ops::Add for $m {
-      type Output = Self;
-      fn add(self, rhs: Self) -> Self {
-        $m {
-          $( $f: self.$f + rhs.$f ),+
-        }
-      }
-    }
-    impl core::ops::Add<&$m> for $m {
-      type Output = Self;
-      fn add(self, rhs: &Self) -> Self {
-        self + *rhs
-      }
-    }
-    //
-    impl core::ops::AddAssign for $m {
-      fn add_assign(&mut self, rhs: Self) {
-        $( self.$f += rhs.$f; )+
-      }
-    }
-    impl core::ops::AddAssign<&$m> for $m {
-      fn add_assign(&mut self, rhs: &Self) {
-        $( self.$f += rhs.$f; )+
-      }
-    }
-  }
-}
-
 impl_add_for!(Mat2x2 { r0c0, r1c0, r0c1, r1c1 });
 impl_add_for!(Mat2x3 { r0c0, r1c0, r0c1, r1c1, r0c2, r1c2 });
 impl_add_for!(Mat2x4 { r0c0, r1c0, r0c1, r1c1, r0c2, r1c2, r0c3, r1c3 });

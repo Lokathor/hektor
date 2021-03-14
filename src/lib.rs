@@ -1,8 +1,13 @@
+mod macros;
+use macros::*;
+
 mod clamp01;
 pub use clamp01::*;
 
 pub use _f32::*;
 mod _f32 {
+  use super::*;
+
   mod structures;
   pub use structures::*;
 
