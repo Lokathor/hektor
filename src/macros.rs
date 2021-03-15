@@ -81,20 +81,9 @@ macro_rules! impl_add_for {
         }
       }
     }
-    impl core::ops::Add<&$m> for $m {
-      type Output = Self;
-      fn add(self, rhs: &Self) -> Self {
-        self + *rhs
-      }
-    }
     //
     impl core::ops::AddAssign for $m {
       fn add_assign(&mut self, rhs: Self) {
-        $( self.$f += rhs.$f; )+
-      }
-    }
-    impl core::ops::AddAssign<&$m> for $m {
-      fn add_assign(&mut self, rhs: &Self) {
         $( self.$f += rhs.$f; )+
       }
     }
@@ -112,20 +101,9 @@ macro_rules! impl_sub_for {
         }
       }
     }
-    impl core::ops::Sub<&$m> for $m {
-      type Output = Self;
-      fn sub(self, rhs: &Self) -> Self {
-        self - *rhs
-      }
-    }
     //
     impl core::ops::SubAssign for $m {
       fn sub_assign(&mut self, rhs: Self) {
-        $( self.$f -= rhs.$f; )+
-      }
-    }
-    impl core::ops::SubAssign<&$m> for $m {
-      fn sub_assign(&mut self, rhs: &Self) {
         $( self.$f -= rhs.$f; )+
       }
     }
